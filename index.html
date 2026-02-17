@@ -7,6 +7,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        
+        body {
+            background-image: url('https://i.pinimg.com/1200x/54/98/5f/54985f404bb7217cd310ccac2a076fd5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        #boox {
+            background-color: rgba(0, 0, 0, 0.6); 
+            border: 2px solid;
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            border-color: white;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        kbd {
+            font-size: 19px;
+            padding: 10px;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .shops {
+            margin: 15px;
+            padding-top: 15px;
+        }
+
+        footer p {
+            opacity: 0.84;
+            font-size: 17px;
+        }
 
     </style>
 
@@ -28,7 +64,7 @@
                 <a class="nav-link" href="index.html">Shop</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="page2.html">Locator</a>
+                <a class="nav-link" href="page2.html">Locate</a>
                 </li>
             </ul>
 
@@ -40,27 +76,26 @@
         </div>
     </nav>
 
-    <center>
+        <center>
+        <div id="boox" style="border: 1px solid black; margin: 20px; padding: 20px; width: 80%;">
 
         <h2>Product Locator</h2>
         <br>
 
-        <p class="text-center">Are you trying to find new Basketball Shoes?<br><br>Enter your budget here to find the right ones for you!</p>
+        <p class="text-center">Are you trying to find new Basketball Shoes?<br><br>Enter your budget here to find out the discounted price in your nearest stores. Simply type your number and press the "Brand & Discounts" button to reveal your discount.</p>
+
+        <div class="shops">
+
+            <h4>Recommended Shops</h4>
+            <p>Nike Store | Toby's Sports | Foot Locker</p>
+
         </div>
 
-        <details ontoggle="message1()">
-
-        <summary>
-            <u>Instructions</u>
-        </summary>
-        
-        <i id="message"></i>
-        </details>
         <br>
 
         <div class="row mx-auto d-block">
             <div class="col-lg-6">
-                <input type="number" class="form-control" id="num1">
+                <input type="number" class="form-control" id="num1" placeholder="Enter here">
             </div>
         </div>
 
@@ -68,28 +103,48 @@
 
         <div class="row mx-auto d-block">
             <div class="col-lg-6">
-                <kbd id="result1"?>Output 1</kbd>
+                <kbd id="result1"?>RESULT</kbd>
             </div>
+        </div>
+
         </div>
 
         <br>
 
         <button type="button" id="buttons" class="btn btn-success" onclick="brandy()">Brand & Discounts</button>
-
         <button type="button" class="btn btn-success" onclick="window.location.reload()">Refresh</button>
+        
+        </center>
 
-    </center>
+        <br><br><br><br>
+
+        <footer>
+            
+        <div class="container text-center">
+            <p class="mb-0">Grade 9 - Topaz | Phoenix Christow Hizon</p>
+        </div>
+        
+        </footer>
 
 
         
 
     <script>
 
-        function brandy(){
+        function brandy (){
 
-            let gaygaygay = disc.toFixed(2);
+            var num1 = document.getElementById("num1").value;
+            var percentage = 0.20;
+            var one = num1 * percentage;
+            var two = num1 - one;
 
+            let result = "The Discounted amount is: PHP" + one.toFixed(2) + ", The Final price is: PHP" + two.toFixed(2);
+
+            document.getElementById("result1").innerHTML = result;
         }
+
+
+
     
     </script>
     
